@@ -21,7 +21,7 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {}
 
   onSearch(value: String) {
-    if (value && value.length > 3) {
+    if (value && value.length > 2) {
       this.router.navigate(['/character-list'], {
         queryParams: { q: value },
       });

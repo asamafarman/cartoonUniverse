@@ -1,6 +1,9 @@
 export interface Character {
-  name:string;
   id:number;
-  maxLevel:number;
+  name:string;
   image:string;
+  species:string;
+  gender:string;
+  created:string;
+  status:string;
 }
