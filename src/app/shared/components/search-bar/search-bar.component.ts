@@ -26,5 +26,9 @@ export class SearchBarComponent implements OnInit {
         queryParams: { q: value },
       });
     }
+    //si el valor de value es menor a 2 caracteres, se limpia la url
+    else {
+      this.router.navigate(['/character-list']);
+    }
   }
 }
