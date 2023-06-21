@@ -16,12 +16,8 @@ import { Character } from '@app/shared/components/interfaces/character.interface
   <div class="card-inner">
     <div class="header">
       <a [routerLink]="['/character-details', character.id]">
-        <h2>{{ character.name | slice: 0:20 }}</h2>
+        <h4>{{ character.name | slice: 0:20 }}</h4>
       </a>
-      <h2 class="text-muted">{{character.status}}</h2>
-      <h4 class="text-muted">{{character.gender}}</h4>
-      <h4 class="text-muted">{{character.species}}</h4>
-      <small class="text-muted">{{ character.created | date}}</small>
     </div>
   </div>
 </div>`,

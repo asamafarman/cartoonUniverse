@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #e45f3a;" >
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/">Rick&Morty<span class="text-danger">APP</span></a>
+    <div class="card">
+    <a class="navbar-brand" routerLink="/"><label class="text-dark">Cartoon</label><span class="text-danger">Universe</span></a>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -9,7 +11,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/">Characters</a>
+          <a class="nav-link active" aria-current="page" routerLink="/">Rick&Morty</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/heroes">Favorites</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/dashboard">Top Characters</a>
         </li>
       </ul>
       <div class="col-xs-12 col-sm-12 col-md-6">

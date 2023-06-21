@@ -1,0 +1,37 @@
+<div *ngIf="hero">
+  <div class="row justify-content-center mt-3">
+    <div class="col-xs-12-col-sm-6 col-md-6 justify-content-center">
+      <div class="card">
+        <div class="image">
+          <img *ngIf="hero.image" [src]="hero.image" class="card-img-top" alt="{{hero.name}} image">
+        </div>
+        <div class="card-inner">
+          <h2>{{hero.name | uppercase}} </h2>
+          <h5 class="text-danger">Details</h5>
+
+
+          <div class="form-group">
+            <label for="hero-name">Character name: </label>
+            <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name" />
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="superpowers">Comments:</label>
+            <select id="superpowers" [(ngModel)]="hero.superpowers" name="superpower">
+              <option *ngFor="let superpower of superpowersList" [value]="superpower">{{superpower.name}}</option>
+            </select>
+          </div>
+
+          <br>
+          <div>
+            <button type="button" class="btn btn-success " (click)="save()">Save</button>
+            <button type="button" class="btn btn-secondary" title="show image"
+              (click)="getRickMortyImage(hero.name)">Show Image</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="goBack()">go back</button>
+</div>
+

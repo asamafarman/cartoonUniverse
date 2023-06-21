@@ -1,6 +1,17 @@
 <div class="row justify-content-center mt-3" *ngIf="character$ | async as character">
   <div class="col-xs-12-col-sm-6 col-md-6 justify-content-center">
     <app-character [character]="character"></app-character>
+    <div class="card">
+    <div class="card-inner">
+      <div class="header">
+        <h1 class="text-danger">Information</h1>
+        <h2 class="text-muted">{{character.status}}</h2>
+        <h3 class="text-muted">{{character.gender}}</h3>
+        <h3 class="text-muted">{{character.species}}</h3>
+        <small class="text-muted">Created At: {{ character.created | date}}</small>
+      </div>
+    </div>
+    </div>
   </div>
 </div>
 <button (click)="onGoBack()" class="btn btn-primary btn-lg mt-3">

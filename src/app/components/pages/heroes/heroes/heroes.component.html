@@ -1,0 +1,39 @@
+<h2 class="text-dark">Favorite Characters</h2>
+<div class="container">
+  <div class="form-group">
+    <label for="new-hero">Character name:</label>
+    <input id="new-hero" class="form-control" #heroName />
+  </div>
+  <div class="form-group mb-4">
+    <button type="button" class="btn btn-primary"
+      (click)="add(heroName.value); getRickMortyImage(heroName.value); heroName.value=''">
+      Add character
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12-col-sm-6 col-md-4" *ngFor="let hero of heroes">
+    <div class="card">
+      <div class="image">
+        <img *ngIf="hero.image" [src]="hero.image" class="card-img-top" alt="{{hero.name}} image">
+      </div>
+      <div class="card-inner">
+        <h4 class="mb-0">
+          {{hero.name | uppercase}}
+        </h4>
+        <div class="mt-3">
+          <button type="button" class="btn btn-danger float-right" title="Delete hero" (click)="delete(hero)">
+            <i class="fa fa-times">Delete</i>
+          </button>
+          <button type="button" class="btn btn-secondary float-right mr-2 " title="Show image"
+            (click)="getRickMortyImage(hero.name)">
+            Show Image
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
