@@ -1,15 +1,32 @@
-FROM node:18.3.0-alpine3.14 as build-step
+###### Install dependencies only when needed ######
+FROM node:16-alpine AS builder
+LABEL name="cartoonuniverse"
+ARG CONFIGURATION='development'
 
-RUN mkdir -p /app
-
+# Make /app as working directory
 WORKDIR /app
 
-COPY package.json /app
+# Copy package.json file
+COPY package*.json /app/
 
+# Install dependencies
 RUN npm install
 
-COPY . /app
+# Copy the source code to the /app directory
+COPY . .
 
-RUN npm run build
+# Build the application
+RUN npm run build --exit -- --output-path=dist --configuration=$CONFIGURATION --output-hashing=all
 
-COPY --from=build-step /app/build /usr/share/nginx/html
+
+######  Use NgInx alpine image  ######
+FROM nginx:stable-alpine
+
+# Remove default nginx website
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy dist folder fro build stage to nginx public folder
+COPY --from=builder /app/dist /usr/share/nginx/htmlks
+
+# Start NgInx service
+CMD ["nginx", "-g", "daemon off;"]
