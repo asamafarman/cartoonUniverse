@@ -1,6 +1,8 @@
-# ClashRoyaleApp
+# CartoonUniverse App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+
+![CartoonUniverse](https://github.com/asamafarman/cartoonUniverse/assets/72573753/4cab8ca8-2b37-49de-b19c-0d2ec4446d36)
 
 ## Development server
 
